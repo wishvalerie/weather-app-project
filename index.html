@@ -18,17 +18,19 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="conatainer">
       <div class="weather-app">
-        <form>
+        <form id="search-form">
           <div class="row">
             <div class="col-6">
               <input
                 type="search"
                 placeholder="Enter a city..."
                 class="form-control search-input"
+                id="city-input"
               />
             </div>
             <div class="col-2">
@@ -46,10 +48,10 @@
           </div>
         </form>
         <hr />
-        <h1>Paris, FR</h1>
+        <h1 id="submited-city"></h1>
         <ul class="current-state">
           <li>Saturday, 20:00</li>
-          <li>Clear Sky</li>
+          <li id="description"></li>
         </ul>
         <div class="row">
           <div class="col-8 weather-temperature">
@@ -60,15 +62,16 @@
                 class="float-start"
               />
               <span class="float-start"
-                ><strong> 27</strong><span class="units">°C | °F</span></span
+                ><strong id="current-temperature"> </strong
+                ><span class="units">°C | °F</span></span
               >
             </div>
           </div>
           <div class="col-4 more-info">
             <ul>
-              <li>Feels like: 28 °C</li>
-              <li>Humidity: 52 %</li>
-              <li>Wind: 4km/h</li>
+              <li>Feels like: <span id="feels-like"></span> °C</li>
+              <li>Humidity: <span id="humidity"></span> %</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
         </div>

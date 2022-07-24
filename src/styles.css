@@ -57,6 +57,7 @@ a:hover {
 
 .current-state {
   margin-bottom: 20px;
+  text-transform: capitalize;
 }
 
 .weather-temperature {
