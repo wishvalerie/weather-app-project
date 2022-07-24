@@ -17,6 +17,10 @@ li {
   list-style: none;
 }
 
+li::first-letter {
+  text-transform: capitalize;
+}
+
 a {
   text-decoration: none;
   color: #1e4d95;
@@ -57,7 +61,6 @@ a:hover {
 
 .current-state {
   margin-bottom: 20px;
-  text-transform: capitalize;
 }
 
 .weather-temperature {
