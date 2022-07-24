@@ -25,9 +25,12 @@ a {
   text-decoration: none;
   color: #1e4d95;
 }
-
 a:hover {
   color: #000000;
+  text-decoration: underline;
+}
+.units a {
+  color: #fce3ab;
 }
 
 .weather-app {
@@ -84,11 +87,20 @@ a:hover {
   top: -35px;
 }
 
-.more-info {
-  padding-top: 15px;
+.weather-temperature .active {
+  cursor: default;
+  color: #fff;
 }
 
-.github-link {
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.more-info {
+  padding-top: 25px;
+}
+
+.personal-links {
   text-align: center;
   display: block;
   font-size: 13px;
