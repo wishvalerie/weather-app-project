@@ -13,6 +13,9 @@ function searchWeather(city) {
 function displayWeather(response) {
   let city = response.data.name;
   let country = response.data.sys.country;
+  let iconElement = document.querySelector("#icon");
+  let currentIcon = response.data.weather[0].icon;
+  iconElement.setAttribute("src", `images/${currentIcon}.svg`);
   document.querySelector("#submited-city").innerHTML = `${city}, ${country}`;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
