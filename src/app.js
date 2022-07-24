@@ -29,13 +29,9 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#date").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
 }
 
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
+function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -57,6 +53,10 @@ function formatDate(timestamp) {
   let day = days[dayIndex];
   return `${day} ${hours}:${minutes}`;
 }
+
+let currentDate = document.querySelector("#date");
+let currentTime = new Date();
+currentDate.innerHTML = formatDate(currentTime);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchInput);
