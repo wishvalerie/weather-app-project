@@ -81,6 +81,35 @@ function displayCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+          <div class="col">
+            <div class="card border-warning mb-3" style="max-width: 18rem">
+              <div class="card-header">${day}</div>
+              <div class="card-body">
+                <img src="images/01d.svg" />
+                <p class="card-text">
+                  <span class="weather-forecast-temperature-max">18</span>
+                  °C/<span class="weather-forecast-temperature-min"> 10</span>
+                  °C
+                </p>
+              </div>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
+
 let celsiusTemperature = null;
 
 let currentDate = document.querySelector("#date");
