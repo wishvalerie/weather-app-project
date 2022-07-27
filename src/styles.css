@@ -35,7 +35,7 @@ a:hover {
 
 .weather-app {
   display: block;
-  margin: 30px auto;
+  margin: 25px auto;
   margin-bottom: 10px;
   padding: 25px;
   font-family: "Poppins", sans-serif;
@@ -46,6 +46,9 @@ a:hover {
   background: linear-gradient(-225deg, #24559f 0%, #78aadb 48%, #2973b4 100%);
 }
 
+.form-box {
+  padding-bottom: 10px;
+}
 .search-input,
 .search-button {
   background: #e0ebfa;
@@ -97,6 +100,10 @@ a:hover {
 
 .more-info {
   padding-top: 25px;
+}
+
+.row > * {
+  padding-right: 0;
 }
 
 .card {
