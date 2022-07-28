@@ -115,6 +115,7 @@ a:hover {
 }
 .card-header {
   background-color: rgb(41, 97, 181, 0.25);
+  text-transform: uppercase;
 }
 
 .card-text {
