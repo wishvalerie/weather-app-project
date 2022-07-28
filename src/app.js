@@ -79,23 +79,6 @@ function displayCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
 function displayForecast(response) {
   let forecast = response.data.daily;
 
@@ -130,7 +113,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-let celsiusTemperature = null;
 
 let currentDate = document.querySelector("#date");
 let currentTime = new Date();
@@ -142,10 +124,4 @@ form.addEventListener("submit", searchInput);
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", displayCurrentLocation);
 
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsius);
-
-searchWeather("London");
+searchWeather("Paris");
